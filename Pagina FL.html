@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fashion León</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .sidebar {
+      width: 200px;
+      background-color: #efd3ff;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+    product-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .product {
+      flex: 0 0 calc(33.33% - 20px);
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #fa94fa;
+    }
+    .product-button {
+      display: block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .product-button.cart {
+      background-color: #7e7cd4;
+      color: white; /* Cambiar el color del texto a blanco */
+    }
+    
+    .product-button.favorite {
+      background-color: #ef73f3;
+      color: #333; /* Cambiar el color del texto a un tono más oscuro */
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .product h3 {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .product p {
+      margin-bottom: 10px;
+    }
+     
+    .sidebar a {
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #8f57f7;
+      font-weight: bold;
+    }
+    
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+    
+    .section {
+      margin-bottom: 20px;
+    }
+    
+    .product {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .product img {
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+    
+    .review-form {
+      margin-top: 20px;
+    }
+    
+    .contact-info {
+      margin-top: 20px;
+      .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      .cart-table th,
+      .cart-table td {
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+        
+      }
+      
+    </style>
+<body>
+  <div class="sidebar">
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre-nosotros">Sobre nosotros</a>
+    <a href="#productos">Productos</a>
+    <a href="#reseñas">Reseñas</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  
+  <div class="content">
+    <section id="inicio" class="section">
+      <h2>Inicio</h2>
+      <img src="imagenes/Imagen-nosotros.png" alt="Imagen de Nosotros">
+      
+    </section>
+    
+    <section id="sobre-nosotros" class="section">
+      <h2>Sobre nosotros</h2>
+      <p>¡Bienvenido a nuestra tienda de moda y accesorios! Con más de 5 años de experiencia en el mercado, nos enorgullece ofrecerte 
+        una amplia selección de bolsas nacionales y de Estados Unidos, así como prendas de vestir de estilo americano.
+        En nuestro negocio, entendemos que la calidad y el estilo son fundamentales para nuestros clientes. Es por eso que nos hemos especializado en ofrecer bolsas de diseño tanto de marcas nacionales como internacionales reconocidas. Desde elegantes bolsos de mano hasta mochilas funcionales y versátiles, encontrarás una amplia gama de opciones para complementar tu estilo personal y satisfacer tus necesidades diarias.</p>
+    </section>
+    
+    <section id="productos" class="section">
+      <h2>Productos</h2>
+      <h3>BOLSAS</h3>
+      <div class="product"> 
+        <img src="imagenes/producto1.png" alt="Producto 1">
+        <div>
+          <h3>Modelo Sofia</h3>
+          <p>Colores: Negro,Antimonio,Oro Rosado y Camel</p>
+          <p>Precio: $300.00</p>
+          <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+          <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+          
+        </div>
+      </div>
+      
+      <div class="product">
+        <img src="imagenes/producto2.png" alt="Producto 2">
+        <div>
+            <h3>Vianey</h3>
+            <p>Colores: Negro,Azul Marino y Piñon</p>
+            <p>Precio: $280.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto3.png" alt="Producto 3">
+        <div>
+            <h3>Ketzali</h3>
+            <p>Colores: Azul Marino,Nude,Camel y Mostaza</p>
+            <p>Precio: $300.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto4.png" alt="Producto 4">
+        <div>
+            <h3>FRIDA</h3>
+            <p>Estilo Bordado/Tejida</p>
+            <p>Precio: $350.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto5.png" alt="Producto 5">
+        <div>
+            <h3>Yamania</h3>
+            <p>Colores: Blanco y Camel</p>
+            <p>Precio: $190.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto6.png" alt="Producto 6">
+        <div>
+            <h3>MINI1</h3>
+            <p>Colores: Rosa</p>
+            <p>Precio: $150.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto7.png" alt="Producto 7">
+        <div>
+            <h3>Mini2</h3>
+            <p>Colores: Piñon</p>
+            <p>Precio: $150.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto8.png" alt="Producto 8">
+        <div>
+            <h3>Mini3</h3>
+            <p>Colores: Oro Rosado</p>
+            <p>Precio: $150.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto9.png" alt="Producto 9">
+        <div>
+            <h3>Katherine</h3>
+            <p>Colores: Piñon</p>
+            <p>Precio: $280.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto10.png" alt="Producto 10">
+        <div>
+            <h3>Getzabeth</h3>
+            <p>Colores: Mostaza y Camel</p>
+            <p>Precio: $300.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto11.png" alt="Producto 11">
+        <div>
+            <h3>Mini FRIDA</h3>
+            <p>Colores:Multicolor </p>
+            <p>Precio: $180 </p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="imagenes/producto12.png" alt="Producto 12">
+        <div>
+            <h3>Kahlo</h3>
+            <p>Colores:Multicolor </p>
+            <p>Precio: $350</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto13.png" alt="Producto 13">
+        <div>
+            <h3>Frida Animada</h3>
+            <p>Colores:Estilo tejida </p>
+            <p>Precio: $350</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="imagenes/producto14.png" alt="Producto 14">
+        <div>
+            <h3>Cartera Frida</h3>
+            <p>Colores:Morada </p>
+            <p>Precio: $300</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+            <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+        </div>
+      </div>
+
+      <section id="productos" class="section">
+        <h2>Productos</h2>
+        <h3>LUXURY</h3>
+        <div class="product"> 
+          <img src="imagenes/Producto15.png" alt="Producto 15">
+          <div>
+            <h3>H&M</h3>
+            <p>Colores: Negro</p>
+            <p>Precio: $1,250</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+          <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+          </div>
+        </div>
+
+        <div class="product"> 
+          <img src="imagenes/Producto16.png" alt="Producto 16">
+          <div>
+            <h3>VICTORIA´S SECRET</h3>
+            <p>Colores: Negro con rojo detalle flores</p>
+            <p>Precio: $1,250</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+          <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+          </div>
+        </div>
+
+        <div class="product"> 
+          <img src="imagenes/Producto17.png" alt="Producto 17">
+          <div>
+            <h3>Tote Floral</h3>
+            <p>Colores: Fucsia</p>
+            <p>Precio: $320</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+          <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+          </div>
+        </div>
+
+          
+          <div class="product"> 
+            <img src="imagenes/Producto18.png" alt="Producto 18">
+            <div>
+              <h3>VICTORIA´S SECRET</h3>
+              <p>Colores: Blanca Nude</p>
+              <p>Precio: $2,500</p>
+              <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+              <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+            </div>
+          </div>
+          
+          <div class="product"> 
+            <img src="imagenes/Producto19.png" alt="Producto 19">
+            <div>
+              <h3>VICTORIA´S SECRET</h3>
+              <p>Colores: Roja con cuadros negros</p>
+              <p>Precio: $1,250</p>
+              <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+              <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+            </div>
+          </div>
+          <section id="productos" class="section">
+            <h2>Mochilas</h2>
+
+            <div class="product"> 
+              <img src="imagenes/Producto20.png" alt="Producto 20">
+              <div>
+                <h3>De Piel</h3>
+                <p>Colores: Camel</p>
+                <p>Precio: $450</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+
+            <div class="product"> 
+              <img src="imagenes/Producto21.png" alt="Producto 21">
+              <div>
+                <h3>Mochila MINI</h3>
+                <p>Colores: Rosa con detalle estilo tejida/p>
+                <p>Precio: $150</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+
+            <div class="product"> 
+              <img src="imagenes/Producto22.png" alt="Producto 22">
+              <div>
+                <h3>Mochila Infantil</h3>
+                <p>Colores: Estilo Tiburón/p>
+                <p>Precio: $650</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+
+            <div class="product"> 
+              <img src="imagenes/Producto24.png" alt="Producto 24">
+              <div>
+                <h3>VANS</h3>
+                <p>Colores: negra con detalles rosas y morados/p>
+                <p>Precio: $1,450</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+
+            <div class="product"> 
+              <img src="imagenes/Producto23.png" alt="Producto 23">
+              <div>
+                <h3>JUSTICE </h3>
+                <p>Colores: Negro/p>
+                <p>Precio: $1,450</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+
+            <div class="product"> 
+              <img src="imagenes/Producto25.png" alt="Producto 25">
+              <div>
+                <h3>TRAILMAKER </h3>
+                <p>Colores: Negro/p>
+                <p>Precio: $400</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+
+            <div class="product"> 
+              <img src="imagenes/Producto26.png" alt="Producto 26">
+              <div>
+                <h3>JUSTICE </h3>
+                <p>Colores: Lila efecto tornasol/p>
+                <p>Precio: $1,450</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+
+            <div class="product"> 
+              <img src="imagenes/Producto27.png" alt="Producto 27">
+              <div>
+                <h3>JUSTICE C </h3>
+                <p>Colores: Negro </p>
+                  <p>Tiene una lapicera con una cadena para poder quitar en cualquier momento /p>
+                <p>Precio: $1,450</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+
+            <div class="product"> 
+              <img src="imagenes/Producto28.png" alt="Producto 28">
+              <div>
+                <h3>Lapicera </h3>
+                <p>Colores: Rosa </p>
+                <p>Precio: $250</p>
+                <button onclick="agregarAlCarrito('Producto 1', 50)" class="product-button cart">Agregar al carrito</button>
+                <button onclick="agregarFavorito('Producto 1')" class="product-button favorite">Agregar a favoritos</button>
+              </div>
+            </div>
+      
+      <!-- Más productos... -->
+      
+    </section>
+    
+    <section id="reseñas" class="section">
+      <h2>Reseñas</h2>
+      
+      <!-- Aquí se mostrarían las reseñas de los clientes -->
+      
+      <form class="review-form">
+        <h3>Escribir una reseña</h3>
+        <input type="text" placeholder="Nombre">
+        <textarea placeholder="Opinión"></textarea>
+        <textarea placeholder="Correo"></textarea>
+        <button>Enviar reseña</button>
+      </form>
+    </section>
+    
+    <section id="contacto" class="section">
+      <h2>Contacto</h2>
+      <p>Síguenos en nuestras redes sociales:</p>
+      <ul class="contact-info">
+        <li>Facebook: <a href="https://www.facebook.com/profile.php?id=100090323358892">FB</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/fashionleon0327/">IG</a></li>
+        <li>Teléfono: <a href="https://wa.link/khqji8">WhatsApp</a></li> </li>
+        <li>Catálogo: <a href="https://drive.google.com/file/d/1r-SUpDSZd9Gbwb0xPVe-rjOXc2vCaxEs/view?usp=sharing">Catálogo de Disponibilidad</a></li> </li>
+      </ul>
+    </section>
+  </div>
+  
+  <script>
+    var carrito = []; // Array para almacenar los productos seleccionados
+    
+    // Función para agregar productos al carrito
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre: nombre, precio: precio });
+      alert("Producto agregado al carrito");
+      window.location.href = "pagina de compra.html";
+
+      // Función para agregar productos a favoritos
+    function agregarFavorito(nombre) {
+      // Agregar lógica para agregar a favoritos aquí
+      alert("Producto agregado a favoritos");
+    }
+    
+    }
+  </script>
+</body>
+</html>
+    
